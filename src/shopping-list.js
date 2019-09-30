@@ -1,9 +1,9 @@
 import $ from 'jquery';
-
+import api from './api';
 import store from './store';
 import item from './item';
 
-const generateItemElement = function (item) {
+function generateItemElement(item) {
   let itemTitle = `<span class="shopping-item shopping-item__checked">${item.name}</span>`;
   if (!item.checked) {
     itemTitle = `
@@ -55,6 +55,7 @@ const handleNewItemSubmit = function () {
     render();
   });
 };
+
 
 const getItemIdFromElement = function (item) {
   return $(item)
